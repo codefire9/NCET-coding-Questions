@@ -1,65 +1,52 @@
+ 
 import java.util.*;
 public class Main {
 
 public static void main(String args[]) {
  	
-  Scanner s=new Scanner(System.in);
-  System.out.println("enter size of array");
-  int x=s.nextInt();
- 	
- 	
- 	int arr[]=new int[x];
- 	
- 	
- 	System.out.println("enter the elements of array");
- 	for(int i=0;i<x;i++){
- 	    
- 	    arr[i]=s.nextInt();
- 	}
- 	System.out.println("enter the count of smallest repeating number");
- 	int k=s.nextInt();
+	
+	Scanner s=new Scanner(System.in);
+	System.out.println("enter the size of array");
+	int x=s.nextInt();
+	int arr[]=new int[x];
+	System.out.println("enter elements of array");
+       
+      for(int i=0;i<x;i++) {
+	
+	arr[i]=s.nextInt();
+	
+   }
+System.out.println("enter count of smallest repeating number");
+int c=s.nextInt();
 
-    
-    System.out.println(count(arr,x,k));
-    
+ System.out.println(count(arr,x,c));
 }
 
+ static int count(int[] arr, int x, int c) {
+	Arrays.sort(arr);
+	int count=0;
+	
+	for(int i=0;i<x;i++) {
+		
+		for(int j=i+1;j<x;j++) {
+			
+			
+			if(arr[j]==arr[i]) {
+				
+				count++;
+				
+			}
+			if(count==c) {
+				return arr[i];
+				
+			}
+			
+		     }
+	
+	     }
+	return -1;
+	
+     }
 
-        static int count(int[] arr,int x,int k){
-            
-            Arrays.sort(arr);
-            int count=0;
-            
-            for(int i=0;i<x;i++){                      // 1 1 2 3 4
-                
-                
-                for(int j=i+1;j<x;j++){
-                    
-                    if(arr[j]==arr[i]){
-                        
-                        count++;
-                    }
-                    
-                    if(count==k){
-                        return arr[i];
-                        
-                    }
-                    
-                    
-                    
-                    
-                }
-                
-                
-                
-            }
-            return -1;
-            
-            
-            
-            
-        } 
+     }
 
-
-    
-}
