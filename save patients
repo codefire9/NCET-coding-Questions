@@ -1,0 +1,41 @@
+import java.util.*;
+public class practice {
+
+public static void main(String args[]) {
+ 	
+	
+	Scanner s=new Scanner(System.in);
+	
+	System.out.println("enter number of vaccine");
+	int x=s.nextInt();
+	int str[]=new int[x];
+	int pat[]=new int[x];
+	
+	System.out.println("midichlorians count in vaccine ");
+	for(int i=0;i<x;i++) {
+		
+		str[i]=s.nextInt();
+		
+	}
+	System.out.println("midichlorians count in patients");
+	for(int i=0;i<x;i++) {
+		
+		pat[i]=s.nextInt();
+		
+	}
+	Arrays.sort(str);
+	Arrays.sort(pat);
+	
+	String w="yes"; 
+	for(int i=0;i<x;i++) {
+if(str[i]<pat[i]) {
+			
+			  w="no";
+			break;
+		}
+		}
+	System.out.println(w);
+	
+}
+
+}
